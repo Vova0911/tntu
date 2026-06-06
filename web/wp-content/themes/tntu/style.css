@@ -1,0 +1,136 @@
+ /*
+ *  Theme Name:   TNTU
+ *   Theme URI:    http://tntu.edu.ua/
+ *    Description:  TNTU: Twenty Fourteen Child Theme
+ *     Author:       Max Orlovsky
+ *      Author URI:   http://sattu.net
+ *       Template:     twentyfourteen
+ *        Version:      1.0.0
+ *         Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ *          Text Domain:  tntu
+ *          */
+
+@import url("../twentyfourteen/style.css");
+
+h1 {
+}
+
+.hentry h1, h2, h3 {
+/*	font-family: 'open sans', serif; */
+	text-transform: none !important;
+/*	font-weight: 600 !important; */
+	}
+h1 {
+/*	letter-spacing: -0.02em; */
+}
+h1.site-title {
+	letter-spacing: 0;
+/*	font-weight: 400 !important; */
+}
+
+/* websites list  */
+#mssls li {
+	margin: 0 0 6px 0;
+}
+#mssls li:before {
+	content: "✔";
+	padding: 0 4px 0 0;
+}
+
+/* Avoid line breaks in content */
+.page-content {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+
+/* Full Width Page *********************************************************/
+
+.page-template-page-templatesfull-width-php .site {
+    width: 100%;
+}
+ 
+.page-template-page-templatesfull-width-php  .hentry {
+/*
+    margin: 0 auto 48px;
+    max-width: 90%;
+*/
+    margin: 0 0 48px 230px;
+    max-width: 78%;
+}
+
+@-ms-viewport {
+        width: device-width;
+}
+
+@viewport {
+        width: device-width;
+}
+
+
+@media screen and (min-width: 401px) {
+	.page-template-page-templatesfull-width-php  .hentry {
+		margin: 0 auto;
+		max-width: 98%;
+	}
+}
+
+@media screen and (min-width: 673px) {
+	.page-template-page-templatesfull-width-php  .hentry {
+		max-width: 96%;
+	}
+}
+
+@media screen and (min-width: 1008px) {
+	.page-template-page-templatesfull-width-php  .hentry {
+		margin: 0 0 48px 230px;
+		max-width: 78%;
+	}
+}
+.page-template-page-templatesfull-width-php .site-content .entry-header,
+.page-template-page-templatesfull-width-php .site-content .entry-content,
+.page-template-page-templatesfull-width-php .site-content .entry-summary,
+.page-template-page-templatesfull-width-php .site-content .entry-meta,
+.page-template-page-templatesfull-width-php .page-content {
+    margin: 0 auto;
+    max-width: 90%;
+}
+ 
+.page-template-page-templatesfull-width-php .main-content,
+.page-template-page-templatesfull-width-php .content-area {
+    float: left;
+    width: 100%;
+}
+.page-template-page-templatesfull-width-php .site-content,
+.page-template-page-templatesfull-width-php .site-main .widecolumn {
+    margin-left: 0;
+}
+ 
+.page-template-page-templatesfull-width-php .site:before {
+    width: 0;
+}
+ 
+.page-template-page-templatesfull-width-php .site-content {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.widget {
+        font-size: 14px;
+        -webkit-hyphens: auto;
+        -moz-hyphens:    auto;
+        -ms-hyphens:     auto;
+        hyphens:         auto;
+}
+
+.site:before, #secondary, .site-header, .site-footer, .menu-toggle, .featured-content, .featured-content .entry-header, .slider-direction-nav a, .ie8 .featured-content, .ie8 .site:before {
+    background-color: #1e73be;
+}
+/*.header-redesign{*/
+/*	align-items: center;*/
+/*	justify-content: center;*/
+/*	flex-direction: row;*/
+/*	display: flex;*/
+/*}*/
