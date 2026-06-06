@@ -9,16 +9,16 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+<section id="primary" class="content-area content-area-1">
+    <div id="content" class="site-content" role="main">
 
-			<?php if ( have_posts() ) : ?>
+        <?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></h1>
-			</header><!-- .page-header -->
+        <header class="page-header">
+            <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyfourteen' ), get_search_query() ); ?></h1>
+        </header><!-- .page-header -->
 
-				<?php
+        <?php
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
 
@@ -40,8 +40,8 @@ get_header(); ?>
 				endif;
 			?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
+    </div><!-- #content -->
+</section><!-- #primary -->
 
 <?php
 get_sidebar( 'content' );
