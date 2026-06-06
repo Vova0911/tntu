@@ -4328,8 +4328,27 @@ a.post-thumbnail:hover {
 	justify-content: space-between;
 	padding-block: 25px;
 }
+html,
+body {
+	height: 100%;
+}
 body{
 	padding-inline: 15px;
+	min-height: 100vh;
+}
+#page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+#content,
+.site-content {
+	flex: 1;
+}
+
+#colophon,
+.site-footer {
+	margin-top: auto;
 }
 #site-header {
 	text-align: center;
