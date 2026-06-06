@@ -4377,4 +4377,5 @@ body{
 .search-toggle{
 	border-radius: 50%;
 	transition: background-color 0.3s ease;
+	color: red;
 }
