@@ -34,67 +34,51 @@
 <div id="page" class="hfeed site">
 
 
-	<header id="masthead" class="topbar site-header" role="banner">
-        <div class="topbar-inner">
+	<header id="masthead" class="site-header header-redesign" role="banner">
+       <?php
+       $header_image_id = 212;
+       $header_image_url = wp_get_attachment_image_url($header_image_id, 'full');
 
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="brand" rel="home">
-                <?php
-                $logo_id = 212;
-                $logo_url = wp_get_attachment_image_url($logo_id, 'full');
-                ?>
-
-                <?php if ($logo_url) : ?>
-                    <img
-                        src="<?php echo esc_url($logo_url); ?>"
-                        alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
-                        class="brand-logo"
-                    >
-                <?php endif; ?>
-
-                <div class="brand-text">
-                    <div class="brand-title">
-                        <?php bloginfo('name'); ?>
-                    </div>
-                    <div class="brand-subtitle">
-                        Тернопільський національний технічний університет імені Івана Пулюя
-                    </div>
-                </div>
-            </a>
-
-            <div class="topbar-tools">
-                <form role="search" method="get" class="header-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                    <input
-                        type="search"
-                        name="s"
-                        class="header-search-input"
-                        placeholder="Пошук..."
-                        value="<?php echo esc_attr(get_search_query()); ?>"
-                    >
-                    <button type="submit" class="header-search-button" aria-label="Пошук">
-                        🔍
-                    </button>
-                </form>
-
-                <div class="lang-switcher">
-                    UA
-                </div>
-            </div>
-
+       if ($header_image_url) : ?>
+           <div id="site-header">
+               <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                   <img
+                       src="<?php echo esc_url($header_image_url); ?>"
+                       alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"
+                       class="custom-header-logo"
+                   >
+               </a>
+           </div>
+       <?php endif; ?>
+        <div class="header-block">
+        <div class="header-nav-menu">
+        <?php if ( has_nav_menu( 'secondary' ) ) : ?>
+        	<nav role="navigation" class="navigation site-navigation secondary-navigation">
+        		<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
+        	</nav>
+        	<?php endif; ?>
+        	<div class="search-toggle">
+            				<a href="#search-container" class="screen-reader-text" aria-expanded="false" aria-controls="search-container"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+            			</div>
         </div>
-    </header>
+		<div class="header-main">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-    <nav class="navbar" aria-label="Головне меню">
-        <div class="navbar-inner">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container'      => false,
-                'menu_class'     => 'navbar-menu',
-                'menu_id'        => 'primary-menu',
-                'fallback_cb'    => 'wp_page_menu',
-            ));
-            ?>
-        </div>
-    </nav>
+
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
+				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+    </div>
+	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">
