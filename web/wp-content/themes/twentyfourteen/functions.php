@@ -520,3 +520,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+function tntu_custom_fonts() {
+    wp_enqueue_style(
+        'tntu-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Onest:wght@400;500;600;700&display=swap',
+        array(),
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'tntu_custom_fonts');
